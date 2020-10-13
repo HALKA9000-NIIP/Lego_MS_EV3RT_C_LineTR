@@ -1,0 +1,18 @@
+
+//Text data eXtended format for Running
+
+//標準形式 time=ミリ秒時間
+*time runs code data...
+
+
+//開始・終了 init=開始/end=終了
+running init/end
+
+//チェックポイント通過 num=チェックポイント番号
+check *num
+
+//グレー区間 in=進入/out=通過
+gray in/out
+
+//四差路 color=読取色名
+fc *color
