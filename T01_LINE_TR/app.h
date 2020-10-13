@@ -9,3 +9,10 @@
 extern void main_task(intptr_t exinf);
 extern void run_task(intptr_t exinf);
 #endif /* TOPPERS_MACRO_ONLY */
+
+/* 以下独自ヘッダ内容 */
+
+/* カラーセンサ関係 */
+#define BrackToGray 
+#define GrayToBrack 
+#define GrayToWhite 
