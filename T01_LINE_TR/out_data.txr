@@ -1,18 +1,36 @@
 
-//Text data eXtended format for Running
+//Text-data eXtended format for Running-output
+//走行出力用テキストデータ拡張形式
 
-//標準形式 time=ミリ秒時間
-*time runs code data...
+/*標準形式 以下のセンテンス
+//i_time=ミリ秒通算時間(タイムスタンプ) runs=走行場所 code=情報コード data=詳細データ check=チェックサム(任意；付けない場合は詰める)
+$<i_time> <runs> : <code> <data>...*<check>**
+*/
 
+/*
+情報コードとそれに伴う詳細データの組は下記の通り
+*/
 
+//モジュール・機体情報
+info ^txr/<Machine-Base-Product-Name>/<Operating-APIs-Name>/<Machine-Type-Name>&<Org-and-Team-Name>/<Machine-ID>&<Project-Name>/<Module-Name>
+
+//実験等実施日 date=フォーマット済日付 time=フォーマット済時刻
+date <date> <time>
+//ex) ^txr/LEGO-EV3/TOPPERS-EV3RT/LnTR&NU-CST-DCE-T01/DCE2gr01&S-LPESSU/Line_TR
 //開始・終了 init=開始/end=終了
 running init/end
 
+//読取色情報
+col <type> <val> <sensor-identifer>
+//条件判断結果
+
+cj right/left/strait
+
 //チェックポイント通過 num=チェックポイント番号
-check *num
+check <num>
 
 //グレー区間 in=進入/out=通過
 gray in/out
 
 //四差路 color=読取色名
-fc *color
+fc <color>
