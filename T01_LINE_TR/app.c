@@ -27,6 +27,9 @@ int left_inner_black,right_inner_black,left_inner_white,right_inner_white;
 char conJudI[3]="";
 int phase = 0;
 long getTS(){}
+char getRUS(){
+    return "##";
+}
 
 void fileInit(char fileName[]){
     file = fopen(fileName,"a");
@@ -54,10 +57,10 @@ void optMeas(){
     now_val_right = optMath(ev3_color_sensor_get_reflect(color_sensor_right));
     now_color_left = optMath(ev3_color_sensor_get_color(color_sensor_left));
     now_color_right = optMath(ev3_color_sensor_get_color(color_sensor_right));
-    dataWrite(getTS(),,"col","reflect "+now_val_left+" left");
-    dataWrite(,,"col","reflect "+now_val_right+" right");
-    dataWrite(,,"col","color "+now_color_left+" left");
-    dataWrite(,,"col","color "+now_color_right+" right");
+    dataWrite(getTS(),getRUS(),"col","reflect "+now_val_left+" left");
+    dataWrite(getTS(),getRUS(),"col","reflect "+now_val_right+" right");
+    dataWrite(getTS(),getRUS(),"col","color "+now_color_left+" left");
+    dataWrite(getTS(),getRUS(),"col","color "+now_color_right+" right");
 }
 
 void conJud(int val_left,int val_right){
